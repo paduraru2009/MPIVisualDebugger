@@ -1,0 +1,8 @@
+@startuml
+hide footbox
+P0 -[#green]>P1 : ISEND  [sendtest.cpp-44] Tag 0 \n Time[178,184] Duration:6\nSending Size 1
+P1 -[#red]>P0 : IRECV  [sendtest.cpp-49] Tag 0 \nTime[186,187] Duration:1\nExpecting data from master
+P0 -> P0: MPI_Waitall [sendtest.cpp-45] \n Time[190,195] Duration:5\n
+note over P0 : Finished operation \n with status count 1
+P1 -> P1: MPI_Waitall [sendtest.cpp-50] \n Time[199,206] Duration:7\n
+@enduml

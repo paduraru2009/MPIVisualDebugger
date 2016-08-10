@@ -1,0 +1,20 @@
+@startuml
+hide footbox
+note over P0 : Initializing table \n of size (12,12)
+== SCATTER  [gameoflife.cpp-83]  Duration:15 Scattering table lines - 4 per slave ==
+loop iterations: 1000
+P1 -[#green]>P0 : ISEND  [gameoflife.cpp-110]  Duration:1\nSending border up
+P2 -[#green]>P1 : ISEND  [gameoflife.cpp-110]  Duration:0\nSending border up
+P2 -[#red]>P1 : IRECV  [gameoflife.cpp-111]  Duration:0\nReceiving border up
+P0 -[#green]>P1 : ISEND  [gameoflife.cpp-122]  Duration:2\nSending border down
+P1 -[#red]>P0 : IRECV  [gameoflife.cpp-111]  Duration:1\nReceiving border up
+P1 -[#green]>P2 : ISEND  [gameoflife.cpp-122]  Duration:1\nSending border down
+P2 -> P2: MPI_Waitall [gameoflife.cpp-130] \n Duration:15\nwaiting async send/recv
+P1 -[#red]>P2 : IRECV  [gameoflife.cpp-123]  Duration:1\nReceiving border down
+P1 -> P1: MPI_Waitall [gameoflife.cpp-130] \n Duration:1\nwaiting async send/recv
+P0 -[#red]>P1 : IRECV  [gameoflife.cpp-123]  Duration:21\nReceiving border down
+P0 -> P0: MPI_Waitall [gameoflife.cpp-130] \n Duration:2\nwaiting async send/recv
+== BARRIER  [gameoflife.cpp-136] \nLongest wait: P2-38 Duration:38 Sync before next iteration ==
+end
+== GATHER  [gameoflife.cpp-141]  Duration:11 Gathering local tables from slaves ==
+@enduml

@@ -1,0 +1,2 @@
+P-1 Type: IRECV Time:[324,334 (File: sendtest.cpp, Line: 49) (Dest: 0, tag 0) desc: Expecting data from master
+P-1 Type: WAITALL Time:[338,345 (File: sendtest.cpp, Line: 50) (Dest: 0, tag 0) desc: 

@@ -1,0 +1,8 @@
+P-1 Type: SCATTER Time:[598,618 (File: gameoflife.cpp, Line: 79) (Dest: 0, tag 0) desc: Scattering table lines - 3 per slave
+P-1 Type: CYCLE_MANUAL_START Time:[623,623 (File: gameoflife.cpp, Line: 87) (Dest: 0, tag 0) desc: none
+P-1 Type: ISEND Time:[628,726 (File: gameoflife.cpp, Line: 105) (Dest: 2, tag 0) desc: Sending border up
+P-1 Type: IRECV Time:[730,739 (File: gameoflife.cpp, Line: 106) (Dest: 2, tag 0) desc: Receiving border up
+P-1 Type: WAITALL Time:[741,748 (File: gameoflife.cpp, Line: 123) (Dest: 0, tag 0) desc: waiting async send/recv
+P-1 Type: BARRIER Time:[765,989 (File: gameoflife.cpp, Line: 129) (Dest: 0, tag 0) desc: Sync before next iteration
+P-1 Type: CYCLE_MANUAL_END Time:[994,994 (File: gameoflife.cpp, Line: 131) (Dest: 0, tag 0) desc: none
+P-1 Type: GATHER Time:[1001,1010 (File: gameoflife.cpp, Line: 134) (Dest: 0, tag 0) desc: Gathering local tables from slaves

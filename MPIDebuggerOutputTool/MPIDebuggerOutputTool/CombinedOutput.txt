@@ -1,0 +1,5 @@
+P0 Type: ISEND Time:[151,159 (File: sendtest.cpp, Line: 44) (Dest: 1, tag 0) desc: Sending Size 1
+P0 Type: WAITALL Time:[164,170 (File: sendtest.cpp, Line: 45) (Dest: 0, tag 0) desc: 
+P0 Type: NOTE Time:[173,173 (File: sendtest.cpp, Line: 53) (Dest: 0, tag 2) desc: Finished operation with status count -858993460
+P1 Type: IRECV Time:[324,334 (File: sendtest.cpp, Line: 49) (Dest: 0, tag 0) desc: Expecting data from master
+P1 Type: WAITALL Time:[338,345 (File: sendtest.cpp, Line: 50) (Dest: 0, tag 0) desc: 

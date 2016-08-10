@@ -1,0 +1,7 @@
+@startuml
+hide footbox
+title Flow
+note over P0 : Barrier [sendtest.cpp-48] \n Time[178,-1]
+P1 -[#red]>P0 : IRECV  [sendtest.cpp-48]  Tag: 0\n Time[362:367]  Duration:5\nExpecting data from master
+P1 -> P1: MPI_Waitall [sendtest.cpp-49] \n
+@enduml
